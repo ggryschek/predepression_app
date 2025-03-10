@@ -23,18 +23,18 @@ cd ml_prediction_app```
 ### 2. Set Up the Virtual Environment
 Create and activate a virtual environment to keep your dependencies isolated
 
-python -m venv venv
-.\venv\Scripts\activate
+Create: python -m venv venv
+Powershell: Set-ExecutionPolicy Unrestricted -Scope Process
+Activate: .\venv\Scripts\activate (on app level folder)
 
 3. Install Dependencies
-Install the required Python libraries
-pip install -r requirements.txt
+Install the required Python libraries: pip install -r requirements.txt
 
 4. Ensure the Model is Available
 Make sure you have the trained ML model (your_model.pkl) placed inside the model/ directory.
 
 5. Run the Streamlit App
 Run the app using the following command:
-streamlit run app.py
+streamlit run start.py
 
 The app will start, and you can open it in your browser at the URL shown in the terminal
