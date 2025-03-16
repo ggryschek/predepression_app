@@ -161,7 +161,7 @@ translations = {
         'useful_2':'Imparcialidad y confianza: Garantiza que el comportamiento del modelo se alinee con el conocimiento del dominio.',
         'useful_3':'Ingeniería de características: Identifica posibles interacciones o umbrales donde cambia el impacto de la característica.'
     },
-    "Português brasileiro": {
+    "Português Br": {
         "app_name": "DepreScan",
         "app_title": "Rastreio de depressão na Atenção Primária",
         "home_page":"Início",
@@ -332,17 +332,16 @@ grouped_features = {
 }
 
 ## MAIN CONTENT ##
-
 # Streamlit app title
-col1, col2 = st.columns([1, 4])  # Adjust the ratio as needed
+#col1, col2 = st.columns([1, 4])  # Adjust the ratio as needed
 
 # Place the image in the first column
-with col1:
-    st.image("logo_app.jpg", width=100)  # Adjust width as needed
+#with col1:
+#    st.image("logo_app.jpg", width=100)  # Adjust width as needed
 
 # Place the title in the second column
-with col2:
-    st.title(translations[language]["app_name"])
+#with col2:
+#    st.title(translations[language]["app_name"])
 
 col3, col4, col5, col6 = st.columns([1,1,1,1])
 with col3:

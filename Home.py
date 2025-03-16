@@ -64,7 +64,7 @@ translations = {
         "text_survey": "Esta herramienta online forma parte de un proyecto de investigación sobre modelos explicativos de Machine Learning aplicado a la Salud. Si eres un profesional sanitario de Atención Primaria y quieres contribuir a esta investigación, consulta la pestaña 'Survey / Pesquisa' para saber cómo participar",
         "text_thanks":"¡Gracias por su apoyo e interés en este proyecto!"
     },
-    "Português brasileiro": {
+    "Português Br": {
         "app_name": "DepreScan",
         "app_title": "Rastreio de Depressão na Atenção Primária",
         "sidebar_header": "Informe os dados do paciente",
@@ -96,15 +96,15 @@ language = st.session_state.get("language", "English")  # Default to English if 
 ## MAIN CONTENT ##
 
 # Streamlit app title
-col1, col2 = st.columns([1, 4])  # Adjust the ratio as needed
+#col1, col2 = st.columns([1, 4])  # Adjust the ratio as needed
 
 # Place the image in the first column
-with col1:
-    st.image("logo_app.jpg", width=100)  # Adjust width as needed
+#with col1:
+#    st.image("logo_app.jpg", width=100)  # Adjust width as needed
 
 # Place the title in the second column
-with col2:
-    st.title(translations[language]["app_name"])
+#with col2:
+#    st.title(translations[language]["app_name"])
 
 st.markdown(f"<h2>{translations[language]['app_title']}</h2>", unsafe_allow_html=True)
 

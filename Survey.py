@@ -155,15 +155,15 @@ COLORS = {
 ## MAIN CONTENT ##
 
 # Streamlit app title
-col1, col2 = st.columns([1, 4])  # Adjust the ratio as needed
+#col1, col2 = st.columns([1, 4])  # Adjust the ratio as needed
 
 # Place the image in the first column
-with col1:
-    st.image("logo_app.jpg", width=100)  # Adjust width as needed
+#with col1:
+#    st.image("logo_app.jpg", width=100)  # Adjust width as needed
 
 # Place the title in the second column
-with col2:
-    st.title(translations[language]["app_name"])
+#with col2:
+#    st.title(translations[language]["app_name"])
 
 col3, col4, col5, col6 = st.columns([1,1,1,1])
 with col3:

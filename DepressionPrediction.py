@@ -194,7 +194,7 @@ translations = {
         "waterfall_x_label":"SHAP Values: f(x) = 0 means 50% probabilities for each condition",
         "shap_help": "Este método utiliza conceptos de la teoría de juegos para explicar cómo los modelos de Machine Learning hacen predicciones. Funciona distribuyendo equitativamente la importancia de cada característica (variable de entrada) en una predicción, de manera similar a cómo se reparten las recompensas entre los jugadores en un juego cooperativo. Este enfoque se basa en los valores de Shapley, un concepto de la teoría de juegos que garantiza que cada característica reciba crédito en función de su contribución a la predicción final. De esta manera, proporciona explicaciones claras e interpretables de las decisiones del modelo a nivel individual"
     },
-    "Português brasileiro": {
+    "Português Br": {
         "app_name": "DepreScan",
         "app_title": "Detecção de Depressão na Atenção Primária",
         "sidebar_header": "⚠️ Informe AQUI os dados do paciente",
@@ -813,7 +813,7 @@ user_choice[translations[language]['disabilities']] =  translations[language]["d
 link_map = {
     "English": "https://www.washingtongroup-disability.com/fileadmin/uploads/wg/Documents/Questions/Washington_Group_Questionnaire__1_-_WG_Short_Set_on_Functioning__June_2022_.pdf",
     "Español": "https://www.washingtongroup-disability.com/fileadmin/uploads/wg/Documents/WG-Short-Set-Spanish-translation-v2020-June-23.pdf",
-    "Português brasileiro": "https://www.washingtongroup-disability.com/fileadmin/uploads/wg/Documents/WG-Short-Set-Brazilian-Portuguese-translation-v2020-June-23.pdf"
+    "Português Br": "https://www.washingtongroup-disability.com/fileadmin/uploads/wg/Documents/WG-Short-Set-Brazilian-Portuguese-translation-v2020-June-23.pdf"
 }
 
 # Get the correct link based on the selected language
@@ -826,15 +826,15 @@ st.sidebar.markdown(
 
 ### MAIN CONTENT ###
 # Streamlit app title
-col1, col2 = st.columns([1, 6])  # Adjust the ratio as needed
+#col1, col2 = st.columns([1, 6])  # Adjust the ratio as needed
 
 # Place the image in the first column
-with col1:
-    st.image("logo_app.jpg", width=100)  # Adjust width as needed
+#with col1:
+#    st.image("logo_app.jpg", width=100)  # Adjust width as needed
 
 # Place the title in the second column
-with col2:
-    st.title(translations[language]["app_name"])
+#with col2:
+#    st.title(translations[language]["app_name"])
 
 col3, col4, col5, col6 = st.columns([1,1,1,1])
 with col3:
