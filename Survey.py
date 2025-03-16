@@ -206,14 +206,14 @@ st.write(f"### {translations[language]['text_4']}")
 
 st.info(f"{translations[language]['step_1']}")
 
-col10, col11, col12 = st.columns([1,8,1])
+col10, col11 = st.columns([1,8])
 with col10:
-    st.write("# ➡️") #👉
+    st.write(" ") #👉➡️
 with col11:
-    st.write(" ")
-    st.write(f"## {translations[language]['link1']} [{translations[language]['link2']}]({link})", unsafe_allow_html=True)
-with col12:
-    st.write("# ⬅️") #👈
+#st.write(" ")
+    st.write(f"## ➡️{translations[language]['link1']} [{translations[language]['link2']}]({link}) ⬅️", unsafe_allow_html=True)
+#with col12:
+    #st.write("# ⬅️") #👈
 
 st.info(f"{translations[language]['step_2']}")
 
