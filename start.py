@@ -2,7 +2,7 @@ import streamlit as st
 
 ### MULTIPAGE NAVIGATION ###
 
-st.set_page_config(page_title="DepreScan", page_icon=":material/medical_services:")
+st.set_page_config(page_title="Streamlit DepreScan", page_icon=":material/medical_services:")
 
 col1, col2 = st.sidebar.columns([1,4])
 with col1:
