@@ -1,133 +1,19 @@
 import streamlit as st
 
-import streamlit as st
-
-### FORMAT PARAMETERS ###
+### FORMATTING PARAMETERS ###
 st.markdown("""
     <style>
-        /* Main content styling */
-        .main {
-            margin: 0; /* Remove margins around the main content */
-            padding: 10px; /* Add padding around the main content */
-            font-family: 'Arial', sans-serif; /* Set font */
-            background-color: #f7f7f7; /* Light background color for the main content */
-            color: #333; /* Dark text color */
-        }
+        /* Header Styles */
+        h1, .stMarkdown h1 { font-size: 2.5rem; color: royalblue; font-weight: bold; }
+        h2, .stMarkdown h2 { font-size: 1.8rem; color: darkorange; font-weight: bold; }
+        h3, .stMarkdown h3 { font-size: 1.4rem; color: #008080; font-weight: bold; }
+        h4, .stMarkdown h4 { font-size: 1.2rem; color: dodgerblue; }
 
-        /* Custom styling for headings */
-        h1, .stMarkdown h1 {
-            font-size: 2.5rem; /* Large font for the main title */
-            color: #1a73e8; /* Title color */
-            margin-bottom: 15px; /* Space below the title */
-        }
-
-        h2, .stMarkdown h2 {
-            font-size: 2rem; /* Medium font for secondary headings */
-            color: "snow"; /* Secondary headings */
-            margin-bottom: 15px; /* Space below the secondary heading */
-        }
-
-        h3, .stMarkdown h3 {
-            font-size: 1.5rem; /* Smaller font for third-level headings */
-            color: #f39c12; /* Orange color for third-level headings */
-            margin-bottom: 10px; /* Space below the third-level heading */
-        }
-
-        /* Customize text size and margin for the general content */
-        .stText, .stMarkdown, .stButton, .stRadio {
-            font-size: 16px; /* Set text size */
-            margin-bottom: 3px; /* Add space below elements */
-        }
-
-        /* Style buttons */
-        .stButton > button {
-            background-color: snow; /* Snow button */
-            color: steelblue;
-            font-size: 50px; /* Button text size */
-            padding: 10px 70px; /* Button padding */
-            border-radius: 8px;
-            border: none;
-        }
-
-        .stButton > button:hover {
-            background-color: #c5c8c9; /* Darker green when hovered */
-        }
-
-        /* Adjust the layout of elements within the page */
-        .stColumns {
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Sidebar styling */
-        .stSidebar {
-            background-color: #333; /* Dark background color */
-            color: white; /* Light text color */
-            padding: 10px; /* Padding inside the sidebar */
-            font-family: 'Arial', sans-serif; /* Set font for sidebar */
-        }
-
-        /* Custom sidebar title */
-        .stSidebar h1 {
-            font-size: 2rem;
-            color: #fff; /* White text color */
-            margin-bottom: 5px;
-        }
-
-        /* Sidebar headers (for h2 and h3) */
-        .stSidebar h2 {
-            font-size: 1.5rem;
-            color: darkorange; /* Orange color for h2 */
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        .stSidebar h3 {
-            font-size: 1.2rem;
-            color: #1a73e8; /* Blue color for h3 */
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        /* Adjust sidebar text elements */
-        .stSidebar .stText, .stSidebar .stMarkdown {
-            font-size: 16px;
-            color: #ccc; /* Lighter text color */
-            margin-bottom: 5px;
-        }
-
-        /* Sidebar buttons */
-        .stSidebar .stButton > button {
-            background-color: #4CAF50; /* Green button */
-            color: white;
-            font-size: 16px;
-            padding: 4px 4px;
-            border-radius: 4px;
-            border: none;
-            margin-bottom: 5px; /* Add margin below buttons */
-        }
-
-        .stSidebar .stButton > button:hover {
-            background-color: #45a049; /* Darker green when hovered */
-        }
-
-        /* Reduce padding around elements */
-        .stSidebar .stSelectbox, .stSidebar .stCheckbox {
-            margin-top: 2px;
-            margin-bottom: 2px;
-        }
-
-        /* Style links in the sidebar */
-        .stSidebar a {
-            color: #f39c12; /* Orange links */
-            text-decoration: none;
-        }
-
-        .stSidebar a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-
+        /* Sidebar Header Styles */
+        .stSidebar h1 { font-size: 2rem; color: royalblue; font-weight: bold; }
+        .stSidebar h2 { font-size: 1.6rem; color: darkorange; font-weight: bold; }
+        .stSidebar h3 { font-size: 1.3rem; color: #008080; font-weight: bold; }
+        .stSidebar h4 { font-size: 1.1rem; color: #444444; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -150,10 +36,23 @@ translations = {
         "Yes": "Yes",
         "title_1": "Welcome to DepreScan, a tool to assist healthcare professionals in detecting depression in Primary Care",
         "title_2": "Survey on Machine Learning Explanatory Models",
-        "text_1":"This tool is based on the use of Machine Learning (ML) to assess the likelihood of a person having depression from readily available data",
-        "text_2":"For more information about the ML model used, the training data and performance metrics, see the More Information page",
-        "text_3": "If you would like to participate in the survey, on the Questionnaire page, you will find some tasks and questions about DepreScan, the ML model and the explanations",
-        "text_4":"Thank you for your support and interest in this Project!"
+        "text_1":"Help Us Improve Explainable AI for Depression Screening in Primary Care",
+        "text_2":"Machine Learning (ML) models are transforming healthcare, but they are often seen as 'black boxes'— making predictions without clear explanations. Explanatory models help bridge this gap by providing insights into how these models reach their conclusions. Techniques like SHAP values, partial dependence plots, and feature importance analysis can enhance transparency, build trust, and support better decision-making in clinical practice.",
+        "text_3": "This research focuses on depression screening in primary care and aims to understand whether such ML-based tools would be practical and valuable in real-world scenarios.",
+        "search":"We are looking for",
+        "psycho":"Psychologists", 
+        "nurse": "Nurses",
+        "clinic":"General Practitioners/Family Physicians",
+        "experience": "with experience in identifying and treating depressive patients in primary care to share their perspectives.",
+        "how_participate":"How to Participate",
+        "text_4":"If you are willing to contribute to this research, please follow these steps:",
+        "step_1":"1. Click the link – A new tab will open with the questionnaire. Keep the DepreScan tab open, as you will use it during the study.",
+        "link1":"To participate in the Research click",
+        "link2":"HERE",
+        "step_2":"2. Read the consent form – If you agree, provide your consent to proceed.",
+        "step_3":"3. Complete the questionnaire – Follow the instructions carefully to share your insights.",
+        "text_5":"Your participation will help refine AI-driven depression screening, making it more interpretable, reliable, and aligned with real-world needs.",
+        "thanks":"Thank you for your time and contribution!"
     },
     "Español": {
         "app_name": "DepreScan",
@@ -170,11 +69,24 @@ translations = {
         "No": "No",
         "Yes": "Sin",
         "title_1": "Bienvenido a DepreScan, una herramienta para ayudar a los profesionales sanitarios a detectar la depresión en Atención Primaria",
-        "title_2": "Investigación sobre modelos explicativos de aprendizaje automático",
-        "text_1":"Esta herramienta se basa en el uso de aprendizaje automático (ML) para evaluar la probabilidad de que una persona tenga depresión a partir de datos fácilmente disponibles",
-        "text_2":"Para obtener más información sobre el modelo ML utilizado, los datos de entrenamiento y las métricas de rendimiento, consulte la página Más información",
-        "text_3": "Si desea participar en la encuesta, en la página Quiz encontrará algunas tareas y preguntas sobre DepreScan, el modelo ML y explicaciones",
-        "text_4":"¡Gracias por su apoyo e interés en este proyecto!"
+        "title_2": "Encuesta sobre modelos explicativos de Machine Learning",
+        "text_1":"Ayúdenos a mejorar la IA explicable para la detección de la depresión en atención primaria",
+        "text_2":"Los modelos de Machine Learning (ML) están transformando la atención médica, pero a menudo se consideran 'cajas negras' que hacen predicciones sin explicaciones claras. Los modelos explicativos ayudan a superar esta brecha al proporcionar información sobre cómo estos modelos llegan a sus conclusiones. Técnicas como los valores SHAP, los gráficos de dependencia parcial y el análisis de importancia de características pueden mejorar la transparencia, generar confianza y facilitar una mejor toma de decisiones en la práctica clínica.",
+        "text_3": "Esta investigación se centra en la detección de la depresión en atención primaria y busca comprender si estas herramientas basadas en ML serían prácticas y valiosas en situaciones reales.",
+        "search":"Buscamos",
+        "psycho":"Psicólogos", 
+        "nurse": "Enfermeros",
+        "clinic":"Médicos de cabecera/familia",
+        "experience": "con experiencia en la identificación y tratamiento de pacientes deprimidos en atención primaria para compartir sus perspectivas",
+        "how_participate":"Cómo participar",
+        "text_4":"Si desea contribuir a esta investigación, siga estos pasos:",
+        "step_1":"1. Haga clic en el enlace: se abrirá una nueva pestaña con el cuestionario. Mantenga abierta la pestaña DepreScan, ya que la utilizará durante el estudio.",
+        "link1":"Para participar en la investigación, haga clic",
+        "link2":"AQUÍ",
+        "step_2":"2. Lea el formulario de consentimiento. Si está de acuerdo, dé su consentimiento para continuar.",
+        "step_3":"3. Complete el cuestionario. Siga atentamente las instrucciones para compartir sus observaciones.",
+        "text_5":"Su participación ayudará a perfeccionar la detección de la depresión basada en IA, haciéndola más interpretable, fiable y adaptada a las necesidades del mundo real.",
+        "thanks":"¡Gracias por su tiempo y contribución!"
     },
     "Português brasileiro": {
         "app_name": "DepreScan",
@@ -192,10 +104,23 @@ translations = {
         "Yes": "Sim",
         "title_1": "Bem vindos ao DepreScan, uma ferramenta para auxiliar profissionais da saúde na detecção de depressão na Atenção Primária",
         "title_2": "Pesquisa em Modelos Explicativos de Machine Learning",
-        "text_1":"Essa ferramenta se baseia no uso de Machine Learning (ML) para avaliar a probabilidade de uma pessoa ter depressão a partir de dados facilmente disponíveis",
-        "text_2":"Para mais informações sobre o modelo de ML utilizado, os dados de treino e métricas de performance, veja a página Mais Informações",
-        "text_3": "Se você deseja participar da pesquisa na página Questionário, você encontrará algumas tarefas e perguntas sobre o DepreScan, o modelo de ML e as explicações",
-        "text_4":"Obrigado pelo apoio e interesse neste Projeto!"
+        "text_1":"Ajude-nos a melhorar a IA explicável para triagem de depressão na atenção primária",
+        "text_2":"Os modelos de Machine Learning (ML) estão transformando a assistência médica, mas geralmente são vistos como 'caixas pretas' — fazendo previsões sem explicações claras. Os modelos explicativos ajudam a preencher essa lacuna, fornecendo insights sobre como esses modelos chegam às suas conclusões. Técnicas como valores SHAP, gráficos de dependência parcial e análise de importância de variáveis podem aumentar a transparência, criar confiança e dar suporte a uma melhor tomada de decisão na prática clínica.",
+        "text_3": "Esta pesquisa se concentra no screening de depressão na atenção primária e visa entender se essas ferramentas baseadas em ML seriam práticas e valiosas em cenários do mundo real.",
+        "search":"Estamos procurando",
+        "psycho":"Psicólogos", 
+        "nurse": "Enfermeiros",
+        "clinic":"Clínicos gerais/Médicos de família",
+        "experience": "com experiência na identificação e tratamento de pacientes deprimidos na atenção primária para compartilhar suas perspectivas",
+        "how_participate":"Como participar",
+        "text_4":"Se você estiver disposto a contribuir para esta pesquisa, siga estas etapas:",
+        "step_1":"1. Clique no link – Uma nova guia será aberta com o questionário. Mantenha a guia DepreScan aberta, pois você a usará durante o estudo.",
+        "link1":"Para participar na Pesquisa clique",
+        "link2":"AQUI",
+        "step_2":"2. Leia o formulário de consentimento – Se concordar, dê seu consentimento para prosseguir.",
+        "step_3":"3. Preencha o questionário – Siga as instruções cuidadosamente para compartilhar seus insights.",
+        "text_5":"Sua participação ajudará a aprimorar o screening de depressão orientada por IA, tornando-a mais interpretável, confiável e alinhada às necessidades do mundo real.",
+        "thanks":"Obrigado pelo seu tempo e participação!"
     }
 }
 
@@ -215,17 +140,17 @@ COLORS = {
 }
 
 # Streamlit Page Title
-st.markdown(f"<h1 style='color: {COLORS['title']};'>Health App Dashboard</h1>", unsafe_allow_html=True)
+#st.markdown(f"<h1 style='color: {COLORS['title']};'>Health App Dashboard</h1>", unsafe_allow_html=True)
 
 # Headers and Subheaders
-st.markdown(f"<h2 style='color: {COLORS['header']};'>Overview</h2>", unsafe_allow_html=True)
-st.markdown(f"<h3 style='color: {COLORS['subheader']};'>User Statistics</h3>", unsafe_allow_html=True)
-st.markdown(f"<h4 style='color: {COLORS['text']};'>Recent Activity</h4>", unsafe_allow_html=True)
+#st.markdown(f"<h2 style='color: {COLORS['header']};'>Overview</h2>", unsafe_allow_html=True)
+#st.markdown(f"<h3 style='color: {COLORS['subheader']};'>User Statistics</h3>", unsafe_allow_html=True)
+#st.markdown(f"<h4 style='color: {COLORS['text']};'>Recent Activity</h4>", unsafe_allow_html=True)
 
 # Information Messages
-st.markdown(f"<p style='color: {COLORS['success']}; font-weight: bold;'>✅ All systems are running smoothly.</p>", unsafe_allow_html=True)
-st.markdown(f"<p style='color: {COLORS['warning']}; font-weight: bold;'>⚠️ Warning: Some users haven't completed their profiles.</p>", unsafe_allow_html=True)
-st.markdown(f"<p style='color: {COLORS['error']}; font-weight: bold;'>❌ Error: Failed to fetch patient records.</p>", unsafe_allow_html=True)
+#st.markdown(f"<p style='color: {COLORS['success']}; font-weight: bold;'>✅ All systems are running smoothly.</p>", unsafe_allow_html=True)
+#st.markdown(f"<p style='color: {COLORS['warning']}; font-weight: bold;'>⚠️ Warning: Some users haven't completed their profiles.</p>", unsafe_allow_html=True)
+#st.markdown(f"<p style='color: {COLORS['error']}; font-weight: bold;'>❌ Error: Failed to fetch patient records.</p>", unsafe_allow_html=True)
 
 ## MAIN CONTENT ##
 
@@ -250,17 +175,54 @@ with col5:
 with col6:
     st.page_link("MoreInfo.py", label=translations[language]['more_info_page'], icon=":material/info:")
 
-st.header(translations[language]['survey_page'])
+st.header(translations[language]['title_2'])
 
-st.markdown(f"<h2>{translations[language]['app_title']}</h2>", unsafe_allow_html=True)
+#st.markdown(f"<h2>{translations[language]['app_title']}</h2>", unsafe_allow_html=True)
 
-st.markdown(f"<h3>{translations[language]['title_1']}</h3>", unsafe_allow_html=True)
+#st.markdown(f"<h3>{translations[language]['title_1']}</h3>", unsafe_allow_html=True)
 
-st.write(f"{translations[language]['text_1']}")
+st.write(f"### {translations[language]['text_1']}")
 st.write(f"{translations[language]['text_2']}")
 
-st.markdown(f"<h3>{translations[language]['title_2']}</h3>", unsafe_allow_html=True)
+#st.markdown(f"<h2>{translations[language]['title_2']}</h2>", unsafe_allow_html=True)
+link = "https://developer.mozilla.org/pt-BR/docs/Web/CSS/color_value#palavras-chave_de-cores"
 
 st.write(f"{translations[language]['text_3']}")
+st.write(" ")
 
-st.write(f"{translations[language]['text_4']}")
+col7, col8, col9 = st.columns([2,3,4])
+with col7:
+    st.write(f"#### {translations[language]['search']}")
+with col8:
+    st.info(f" - {translations[language]['psycho']}")
+
+    st.info(f" - {translations[language]['nurse']}")
+
+    st.info(f" - {translations[language]['clinic']}")
+with col9:
+    st.write(f"#### {translations[language]['experience']}")
+
+st.write(f"### {translations[language]['text_4']}")
+
+st.info(f"{translations[language]['step_1']}")
+
+col10, col11, col12 = st.columns([1,8,1])
+with col10:
+    st.write("# ➡️") #👉
+with col11:
+    st.write(" ")
+    st.write(f"## {translations[language]['link1']} [{translations[language]['link2']}]({link})", unsafe_allow_html=True)
+with col12:
+    st.write("# ⬅️") #👈
+
+st.info(f"{translations[language]['step_2']}")
+
+st.info(f"{translations[language]['step_3']}")
+
+st.write(f"{translations[language]['text_5']}")
+
+col13, col14 = st.columns([1,4])
+with col13:
+    st.write(" ")
+with col14:
+    st.write(f"### {translations[language]['thanks']}")

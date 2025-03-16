@@ -12,151 +12,20 @@ import plotly.graph_objects as go
 import matplotlib.image as mpimg
 import joblib
 
-### FORMAT PARAMETERS ###
+### FORMATTING PARAMETERS ###
 st.markdown("""
     <style>
-        /* Main content styling */
-        .main {
-            margin: 0; /* Remove margins around the main content */
-            padding: 10px; /* Add padding around the main content */
-            font-family: 'Arial', sans-serif; /* Set font */
-            background-color: #f7f7f7; /* Light background color for the main content */
-            color: #333; /* Dark text color */
-        }
+        /* Header Styles */
+        h1, .stMarkdown h1 { font-size: 2.5rem; color: royalblue; font-weight: bold; }
+        h2, .stMarkdown h2 { font-size: 1.8rem; color: darkorange; font-weight: bold; }
+        h3, .stMarkdown h3 { font-size: 1.4rem; color: #008080; font-weight: bold; }
+        h4, .stMarkdown h4 { font-size: 1.2rem; color: #444444; }
 
-        /* Custom styling for headings */
-        h1, .stMarkdown h1 {
-            font-size: 2.5rem; /* Large font for the main title */
-            color: #1a73e8; /* Title color */
-            margin-bottom: 15px; /* Space below the title */
-        }
-
-        h2, .stMarkdown h2 {
-            font-size: 2rem; /* Medium font for secondary headings */
-            color: #4caf50; /* Green color for secondary headings */
-            margin-bottom: 15px; /* Space below the secondary heading */
-        }
-
-        h3, .stMarkdown h3 {
-            font-size: 1.5rem; /* Smaller font for third-level headings */
-            color: snow; /* Orange color for third-level headings */
-            margin-bottom: 10px; /* Space below the third-level heading */
-        }
-
-        h4, .stMarkdown h4 {
-            font-size: 1.0rem; /* Smaller font for forth-level headings */
-            color: snow /* white color for forth-level headings */
-            margin-bottom: 5px; /* Space below the forth-level heading */
-        }
-            
-        /* Customize text size and margin for the general content */
-        .stText, .stMarkdown, .stButton, .stRadio {
-            font-size: 16px; /* Set text size */
-            margin-bottom: 3px; /* Add space below elements */
-        }
-
-        /* Style buttons */
-        .stButton > button {
-            background-color: snow; /* Snow button */
-            color: royalblue;
-            font-size: 15px; /* Button text size */
-            padding: 20px 100px; /* Button padding */
-            border-radius: 16px;
-            border: none;
-        }
-
-        .stButton > button:hover {
-            background-color: #c5c8c9; /* Darker green when hovered */
-        }
-
-        /* Adjust the layout of elements within the page */
-        .stColumns {
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Sidebar styling */
-        .stSidebar {
-            background-color: #333; /* Dark background color */
-            color: white; /* Light text color */
-            padding: 10px; /* Padding inside the sidebar */
-            font-family: 'Arial', sans-serif; /* Set font for sidebar */
-        }
-
-        /* Custom sidebar title */
-        .stSidebar h1 {
-            font-size: 2rem;
-            color: #fff; /* White text color */
-            margin-bottom: 5px;
-        }
-
-        /* Sidebar headers (for h2 and h3) */
-        .stSidebar h2 {
-            font-size: 1.5rem;
-            color: darkorange; /* Orange color for h2 */
-            margin-top: 2px;
-            margin-bottom: 2px;
-        }
-
-        .stSidebar h3 {
-            font-size: 1.2rem;
-            color: lightcyan; /* Blue color for h3 */
-            margin-top: 2px;
-            margin-bottom: 2px;
-        }
-
-        .stSidebar h4 {
-            font-size: 1.0rem;
-            color: green; /* white color for h4 */
-            margin-top: 0px;
-            margin-bottom: 1px;
-        }
-            
-        /* Adjust sidebar text elements */
-        .stSidebar .stText, .stSidebar .stMarkdown {
-            font-size: 14px;
-            color: #ccc; /* Lighter text color */
-            display: block;
-            margin-left: 0;
-            margin-right: auto;
-            margin-bottom: 2px;
-        }
-
-        /* Sidebar buttons */
-        .stSidebar .stButton > button {
-            background-color: #4CAF50; /* Green button */
-            color: white;
-            font-size: 14px;
-            padding: 2px 2px;
-            border-radius: 4px;
-            border: none;
-            margin-bottom: 2px; /* Add margin below buttons */
-        }
-
-        .stSidebar .stButton > button:hover {
-            background-color: #45a049; /* Darker green when hovered */
-        }
-
-        /* Reduce padding around elements */
-        .stSidebar .stSelectbox, .stSidebar .stCheckbox {
-            display: block;
-            margin-left: 0;
-            margin-right: auto;
-            margin-top: 2px;
-            margin-bottom: 2px;
-        }
-
-        /* Style links in the sidebar */
-        .stSidebar a {
-            color: dodgerblue; /* Orange links */
-            text-decoration: none;
-        }
-
-        .stSidebar a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-
+        /* Sidebar Header Styles */
+        .stSidebar h1 { font-size: 2rem; color: royalblue; font-weight: bold; }
+        .stSidebar h2 { font-size: 1.6rem; color: darkorange; font-weight: bold; }
+        .stSidebar h3 { font-size: 1.3rem; color: #008080; font-weight: bold; }
+        .stSidebar h4 { font-size: 1.1rem; color: #444444; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -167,7 +36,7 @@ st.markdown("""
 translations = {
     "English": {
         "app_name": "DepreScan",
-        "app_title": "Depression Prediction for Primary Care",
+        "app_title": "Depression Screening for Primary Care",
         "sidebar_header": "⚠️ Inform HERE Patients Data",
         "home_page":"Home",
         "depre_page":"DepreScan",
@@ -236,7 +105,7 @@ translations = {
         "False": "Non-depression",
         "non_depression": "Non-Depression",
         "depression": "Depression",
-        "check_table_fail":"⚠️ We still have 'Don't knows': remember this might affect the prediction results!",
+        "check_table_fail":"⚠️ We still have 'Don't know': remember this might affect the prediction results!",
         'check_table_ok':'✅ Thanks for providing as much data as possible: this will make the prediction more accurate!',
         "shap":"Understand this result with SHAP (SHapley Additive exPlanations)",
         "shap_waterfall_title":"SHAP Waterfall Plot",
@@ -246,7 +115,7 @@ translations = {
     },
     "Español": {
         "app_name": "DepreScan",
-        "app_title": "Predicción de la depresión en atención primaria",
+        "app_title": "Detección de la depresión en atención primaria",
         "sidebar_header": "⚠️ Informe AQUÍ los datos del paciente",
         "home_page":"Início",
         "depre_page":"DepreScan",
@@ -325,7 +194,7 @@ translations = {
     },
     "Português brasileiro": {
         "app_name": "DepreScan",
-        "app_title": "Predição de Depressão na Atenção Primária",
+        "app_title": "Detecção de Depressão na Atenção Primária",
         "sidebar_header": "⚠️ Informe AQUI os dados do paciente",
         "home_page":"Início",
         "depre_page":"DepreScan",
@@ -677,7 +546,7 @@ def plot_shap_feature_importance(shap_values, title="Global Feature Importance",
     # Show the plot in Streamlit
     st.pyplot(fig)
 
-def update_prediction(input, model, grouped_features, explainer): # Collect user inputs dynamically
+def update_prediction(input, model, grouped_features, explainer, language): # Collect user inputs dynamically
     # Predict the class and probabilities
     prediction = model.predict(input)[0]
     probas = model.predict_proba(input)[0]
@@ -807,7 +676,7 @@ def generate_lime_explanation(input_data, model, class_names=['non_depression', 
 
 ### SIDE BAR SETTINGS ###
 # User input section
-st.sidebar.header(translations[language]["sidebar_header"])
+st.sidebar.markdown("## " + translations[language]["sidebar_header"])
 
 user_input = {} # Initialize user input dictionary
 user_choice = {} # Initialize user choice for user feedback
@@ -816,7 +685,7 @@ user_choice = {} # Initialize user choice for user feedback
 st.sidebar.markdown("### " + "1. " + translations[language]["age"])
 #dont_know_label_age = translations[language]["dont_know"]
 #age_dontknow = st.sidebar.checkbox(dont_know_label_age, key="age_dontknow", value=True) # Checkbox for "Don't know"
-age = st.sidebar.number_input(label='', min_value=18, max_value=100, value=50, key="age", #disabled=age_dontknow, # Number input for age
+age = st.sidebar.slider(label='', min_value=18, max_value=100, value=50, key="age", #disabled=age_dontknow, # Number input for age
     help=translations[language]["age_help"])
 
 user_input['RIDAGEYR'] = age # np.nan if age_dontknow else age # Store user input (keeping None as the standard representation)
@@ -831,7 +700,7 @@ gender_map = { # Define translation mappings
 
 gender_options = list(gender_map.keys()) # Translated options
 #gender_dontknow = st.sidebar.checkbox(dont_know_label_gender, key="gender_dontknow", value=True)
-selected_gender = st.sidebar.selectbox(label='', options=gender_options, key="gender", index=1, #disabled=gender_dontknow,
+selected_gender = st.sidebar.radio(label='', options=gender_options, key="gender", index=1, #disabled=gender_dontknow,
                                    help=translations[language]["gender_help"])
 
 user_input['gender'] = selected_gender #np.nan if gender_dontknow else selected_gender
@@ -846,7 +715,7 @@ marital_map= {
     translations[language]["Divorced"]: "Divorced",
     translations[language]["Never Married"]: "Never Married"}
 marital_options = list(marital_map.keys())
-marital_status = st.sidebar.selectbox(label="",options=marital_options, 
+marital_status = st.sidebar.radio(label="",options=marital_options, 
         key="marital_status", 
         disabled=marital_dontknow,
         help=translations[language]["marital_help"])
@@ -953,12 +822,6 @@ st.sidebar.markdown(
     unsafe_allow_html=True)
 
 ### MAIN CONTENT ###
-# Convert user input into a DataFrame
-input_df = preprocess_input(user_input, translations, language, scaler=scaler)
-
-# Extract SHAP VALUES
-shap_values = explainer(input_df)
-
 # Streamlit app title
 col1, col2 = st.columns([1, 6])  # Adjust the ratio as needed
 
@@ -980,14 +843,20 @@ with col5:
 with col6:
     st.page_link("Survey.py", label=translations[language]['survey_page'], icon=":material/edit:")
 
+st.info(translations[language]["default_info"], icon=":material/info:")
 # Display collected data
 st.write("## " + translations[language]["user_review"])
-st.info(translations[language]["default_info"], icon=":material/info:")
 user_choice_table = pd.DataFrame(
-    user_choice.items(),
-    columns=[translations[language]["feature"], translations[language]["user_selection"]],
-    index=np.arange(1, len(user_choice) + 1))  # Sets index starting from 1
+        user_choice.items(),
+        columns=[translations[language]["feature"], translations[language]["user_selection"]],
+        index=np.arange(1, len(user_choice) + 1))  # Sets index starting from 1
 st.table(user_choice_table)
+
+# Convert user input into a DataFrame
+input_df = preprocess_input(user_input, translations, language, scaler=scaler)
+
+# Extract SHAP VALUES
+shap_values = explainer(input_df)
 
 if input_df.isna().any().any():  # Checks for NaN values across the entire DataFrame
     st.warning(translations[language]['check_table_fail'])
@@ -1002,6 +871,6 @@ st.write('## ' + translations[language]["prediction_result"])
 
 #generate_lime_explanation(input_df, app_model)
 
-update_prediction(input_df, app_model, grouped_features, explainer=explainer)
+update_prediction(input_df, app_model, grouped_features, explainer=explainer, language=language)
 
 st.info(translations[language]["shap_help"], icon=":material/info:")
