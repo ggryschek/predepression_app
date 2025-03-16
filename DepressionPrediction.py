@@ -38,7 +38,7 @@ translations = {
         "app_name": "DepreScan",
         "app_title": "Depression Screening for Primary Care",
         "sidebar_header": "⚠️ Inform HERE Patients Data",
-        "inform_here":"👈 To inform patient's data, use the sidebar menu ⚠️",
+        "inform_here":"👈 To inform patients data, use the sidebar menu ⚠️",
         "home_page":"Home",
         "depre_page":"DepreScan",
         "explain_page":"Explanations",

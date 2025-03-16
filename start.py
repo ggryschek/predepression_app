@@ -39,20 +39,24 @@ with col1:
     st.write(" ")
     st.image("logo_app.jpg", width=50)
 with col2:
-     st.markdown('# ' + '**DepreScan**')
+    st.markdown('# ' + '**DepreScan**')
+#with col3:
+#    st.image("KI_logo.png")
+#    st.image("SU_logo.jpg")
 
-col3, col4 = st.columns([1,4])
-with col3:
-    st.write(" ")
-    st.image("logo_app.jpg", width=100)
+col4, col5 = st.columns([1,3])
+width_head = 100
 with col4:
+    st.write(" ")
+    st.image("logo_app.jpg", width=width_head)
+with col5:
      st.write(" ")
      st.markdown('# ' + '**DepreScan**')
 
-# Create columns within the sidebar
-col5, col6, col7 = st.columns([5,2,1])  # Wider space for selectbox, smaller for flag
+## Language Menu ##
+col6, col7, col8 = st.columns([5,2,1])  # Wider space for selectbox, smaller for flag
 
-with col5:
+with col6:
     # Language selection widget (for the first page or the initialization page)
     # Apply styling to the selectbox label using markdown with HTML
     # Apply styling to the language selection prompt with font and centralized text
@@ -78,7 +82,7 @@ with col5:
         </div>
         """, unsafe_allow_html=True
     )
-with col6:
+with col7:
     language = st.selectbox('',
         #'Choose your language / Elige tu idioma / Escolha seu idioma',
         ["English", "Español", "Português Br"],
@@ -89,7 +93,7 @@ with col6:
 # Update session state with the selected language
 st.session_state["language"] = language
 
-with col7:
+with col8:
     st.write(" ")
     st.write(" ")
     st.image(flag_path[language], width=40)  # Resize the flag

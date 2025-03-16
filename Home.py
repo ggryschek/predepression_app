@@ -39,7 +39,7 @@ translations = {
         "text_explainpage":"To understand the importance of each variable in training the model, access the 'Explanations' tab. It is worth remembering that no variable influences the result in isolation. The Machine Learning model learns the patterns between the data and makes the prediction based on these relationships, indicating the possibility of depression or not. This is called the global explanation of the model, which shows how it learned from the training data and the importance of each of the variables in making the predictions",
         "text_infopage_1":"There are several Machine Learning models used for prediction tasks, such as the one used in DepreScan. In this case, the model that performed best was the LGBM, and it is this that is behind the tool's predictions",
         "text_infopage_2":"To learn more about the LGBM model, training data, performance metrics, and other details, visit the 'About the Model' tab",
-        "text_survey": "This online tool is part of a research project on explanatory models for Machine Learning applied to Healthcare. If you are a Primary Care healthcare professional and would like to contribute to this research, see the 'Survey' tab to learn how to participate",
+        "text_survey": "Esta herramienta en línea es parte de un proyecto de investigación de maestría en Informática de la Salud del Instituto Karolinska/Universidad de Estocolmo, sobre modelos explicativos para el aprendizaje automático aplicado a la atención médica. If you are a Primary Care healthcare professional and would like to contribute to this research, see the 'Survey' tab to learn how to participate",
         "text_thanks":"Thank you for your support and interest in this Project!"
     },
     "Español": {
@@ -83,7 +83,7 @@ translations = {
         "text_explainpage":"Para entender a importância de cada variável no treinamento do modelo, acesse a aba 'Explicações'. Vale lembrar que nenhuma variável influencia o resultado de forma isolada. O modelo de Machine Learning aprende os padrões entre os dados e faz a predição com base nessas relações, indicando a possibilidade de depressão ou não. Essa é chamada explicação global do modelo, que mostra como ele aprendeu dos dados de treinamento e a importância de cada uma das variáveis para fazer as previsões",
         "text_infopage_1":"Existem vários modelos de Machine Learning usados para tarefas de predição, como o usado no DepreScan. Neste caso, o modelo que apresentou melhor desempenho foi o LGBM, e é ele que está por trás das previsões da ferramenta",
         "text_infopage_2":"Para saber mais sobre o modelo LGBM, os dados de treinamento, métricas de desempenho e outros detalhes, acesse a aba 'Sobre o Modelo'",
-        "text_survey": "Essa ferramenta online é parte de um projeto de pesquisa sobre modelos expicativos para Machine Learning aplicado à Saúde. Se você é um profissional de saúde da Atenção Primária e deseja contribuir para essa pesquisa, veja a aba 'Survey / Pesquisa' para saber como participar",
+        "text_survey": "Essa ferramenta online é parte de um projeto de pesquisa de Mestrado em Informática aplicada à Saúde do Insituto Karolinska/Universidade de Estocolmo, sobre modelos explicativos para Machine Learning aplicado à Saúde. Se você é um profissional de saúde da Atenção Primária e deseja contribuir para essa pesquisa, veja a aba 'Survey / Pesquisa' para saber como participar",
         "text_thanks":"Obrigado pelo apoio e interesse neste Projeto!"
     }
 }
@@ -140,15 +140,19 @@ with col8:
 
 st.markdown(f"<h3>{translations[language]['title_2']}</h3>", unsafe_allow_html=True)
 
-col9, col10 = st.columns([2,7])  # Adjust the ratio as needed
+col9, col10, col11 = st.columns([2,5.8,1.2])  # Adjust the ratio as needed
 
 with col9:
-    st.page_link("Survey.py", label=f"✏️ {translations[language]['survey']}")
+    st.page_link("Survey.py", label=f"✏️{translations[language]['survey']}")
 
 with col10:
     st.write(f"{translations[language]['text_survey']}")
 
+with col11:
+    st.image("KI_logo.png")
+    st.image("SU_logo.jpg")
+
 st.write('')
 #st.write(f"{translations[language]['text_thanks']}")
-st.markdown(f"<h4>{translations[language]['text_thanks']}</h4>", unsafe_allow_html=True)
+st.markdown(f"<h2>{translations[language]['text_thanks']}</h2>", unsafe_allow_html=True)
 #

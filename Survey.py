@@ -88,7 +88,7 @@ translations = {
         "text_5":"Su participación ayudará a perfeccionar la detección de la depresión basada en IA, haciéndola más interpretable, fiable y adaptada a las necesidades del mundo real.",
         "thanks":"¡Gracias por su tiempo y contribución!"
     },
-    "Português brasileiro": {
+    "Português Br": {
         "app_name": "DepreScan",
         "app_title": "Rastreio de depressão na Atenção Primária",
         "home_page":"Início",
@@ -206,14 +206,14 @@ st.write(f"### {translations[language]['text_4']}")
 
 st.info(f"{translations[language]['step_1']}")
 
-col10, col11 = st.columns([1,8])
+col10, col11, col12 = st.columns([2,8,1])
 with col10:
-    st.write(" ") #👉➡️
+    st.image("KI_logo.png", width=60) #👉➡️
 with col11:
 #st.write(" ")
-    st.write(f"## ➡️{translations[language]['link1']} [{translations[language]['link2']}]({link}) ⬅️", unsafe_allow_html=True)
-#with col12:
-    #st.write("# ⬅️") #👈
+    st.write(f"### ➡️{translations[language]['link1']} [{translations[language]['link2']}]({link})⬅️", unsafe_allow_html=True)
+with col12:
+    st.image("SU_logo.jpg", width=60) #("# ⬅️") #👈
 
 st.info(f"{translations[language]['step_2']}")
 
