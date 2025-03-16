@@ -38,6 +38,7 @@ translations = {
         "app_name": "DepreScan",
         "app_title": "Depression Screening for Primary Care",
         "sidebar_header": "⚠️ Inform HERE Patients Data",
+        "inform_here":"👈 To inform patient's data, use the sidebar menu ⚠️",
         "home_page":"Home",
         "depre_page":"DepreScan",
         "explain_page":"Explanations",
@@ -117,6 +118,7 @@ translations = {
         "app_name": "DepreScan",
         "app_title": "Detección de la depresión en atención primaria",
         "sidebar_header": "⚠️ Informe AQUÍ los datos del paciente",
+        "inform_here":"👈 Para informar los datos del paciente, utilice el menú de la barra lateral ⚠️",
         "home_page":"Início",
         "depre_page":"DepreScan",
         "explain_page":"Explicaciones",
@@ -196,6 +198,7 @@ translations = {
         "app_name": "DepreScan",
         "app_title": "Detecção de Depressão na Atenção Primária",
         "sidebar_header": "⚠️ Informe AQUI os dados do paciente",
+        "inform_here":"👈 Para informar os dados do paciente, utilize o menu lateral ⚠️",
         "home_page":"Início",
         "depre_page":"DepreScan",
         "explain_page":"Explicações",
@@ -843,6 +846,7 @@ with col5:
 with col6:
     st.page_link("Survey.py", label=translations[language]['survey_page'], icon=":material/edit:")
 
+st.write("## " + translations[language]["inform_here"])
 st.info(translations[language]["default_info"], icon=":material/info:")
 # Display collected data
 st.write("## " + translations[language]["user_review"])
