@@ -189,7 +189,7 @@ link = "https://forms.gle/JLWNbM9dyyv5Npir7"
 
 # Mapping links for different languages
 link_map = {
-    "English": "https://forms.gle/JLWNbM9dyyv5Npir7",
+    "English": "https://forms.gle/bHW9qQ8HYb9ceU9i9",
     "Español": "https://forms.gle/JLWNbM9dyyv5Npir7",
     "Português Br": "https://forms.gle/JLWNbM9dyyv5Npir7"
 }
