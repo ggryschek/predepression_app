@@ -106,6 +106,8 @@ translations = {
         "False": "Non-depression",
         "non_depression": "Non-Depression",
         "depression": "Depression",
+        "less_likely":"Less likely",
+        "more_likely":"More likely",
         "check_table_fail":"⚠️ We still have 'Don't know': remember this might affect the prediction results!",
         'check_table_ok':'✅ Thanks for providing as much data as possible: this will make the prediction more accurate!',
         "shap":"Understand this result with SHAP (SHapley Additive exPlanations)",
@@ -186,6 +188,8 @@ translations = {
         "False": "No Depresión",
         "non_depression": "No Depresión",
         "depression": "Depresión",
+        "less_likely":"Menos probable",
+        "more_likely":"Más probable",
         "check_table_fail":"⚠️ Aún tenemos 'No sé': ¡recuerde que esto podría afectar los resultados de la predicción!",
         'check_table_ok':'✅ ¡Gracias por proporcionar la mayor cantidad de datos posible: esto hará que la predicción sea más precisa!',
         "shap":"SHAP (SHapley Additive exPlanations)",
@@ -266,6 +270,8 @@ translations = {
         "False": "Sem depressão",
         "non_depression": "Não Depressão",
         "depression": "Depressão",
+        "less_likely":"Menos provável",
+        "more_likely":"Mais provável",
         "check_table_fail":"⚠️ Ainda temos 'Não sei': lembre-se de que isso pode afetar os resultados da previsão!",
         'check_table_ok':'✅ Obrigado por fornecer o máximo de dados possível: isso tornará a previsão mais precisa!',
         "shap":"Entenda esse resultado com SHAP (SHapley Additive exPlanations)",
@@ -381,9 +387,9 @@ def plot_gauge(probabilities, language):
             'tickvals': [0, 25, 50, 75, 100],
             'ticktext': [
                 translations[language]["non_depression"], 
-                "", 
+                translations[language]["less_likely"], 
                 "Neutral", 
-                "", 
+                translations[language]["more_likely"], 
                 translations[language]["depression"]
             ],
             'tickfont': {'color': 'black', 'size': 14}  # ✅ Set tick labels color
@@ -428,8 +434,8 @@ def plot_shap_waterfall(shap_values, language):
     default_pos_color = "#ff0051"
     default_neg_color = "#008bfb"
     # Custom colors
-    positive_color = "darkseagreen"
-    negative_color = "lightsalmon"
+    positive_color = "lightsalmon"
+    negative_color = "darkseagreen"
 
     # Change the colormap of the artists
     for fc in plt.gcf().get_children():

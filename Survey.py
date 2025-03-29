@@ -185,7 +185,17 @@ st.write(f"### {translations[language]['text_1']}")
 st.write(f"{translations[language]['text_2']}")
 
 #st.markdown(f"<h2>{translations[language]['title_2']}</h2>", unsafe_allow_html=True)
-link = "https://developer.mozilla.org/pt-BR/docs/Web/CSS/color_value#palavras-chave_de-cores"
+link = "https://forms.gle/JLWNbM9dyyv5Npir7"
+
+# Mapping links for different languages
+link_map = {
+    "English": "https://forms.gle/JLWNbM9dyyv5Npir7",
+    "Español": "https://forms.gle/JLWNbM9dyyv5Npir7",
+    "Português Br": "https://forms.gle/JLWNbM9dyyv5Npir7"
+}
+
+# Get the correct link based on the selected language
+link = link_map.get(language, link_map["English"])  # Default to English if the language is not found
 
 st.write(f"{translations[language]['text_3']}")
 st.write(" ")

@@ -47,9 +47,10 @@ translations = {
         "lgbm_text4": "1. It builds multiple decision trees step by step.",
         "lgbm_text5": "2. Each new tree corrects mistakes made by the previous trees.",
         "lgbm_text6": "3. It keeps improving until it makes the best possible predictions.",
+        "lgbm_text7":"4. With the trained model, the result of this process, all new data will pass through these decision trees to reach the final classification.",
         "decision_tree_text1":"A decision tree for classification works like a flowchart that helps decide the class of an input step by step.",
         "decision_tree_text2a":"Start at the root node",
-        "decision_tree_text2b":"The tree begins with a question based on a feature (e.g., 'Is the education level (DMDEDUC2) <= 3.5 (number applied to a category in this feature)?').",
+        "decision_tree_text2b":"The tree begins with a question based on a feature (e.g., 'Is the education level (DMDEDUC2) less or equal to 3.5 (number applied to a category in this feature)?').",
         "decision_tree_text3a":"Make a split",
         "decision_tree_text3b":"The data is divided based on the answer (e.g., 'True' or 'False').",
         "decision_tree_text4a":"Repeat the process",
@@ -162,9 +163,10 @@ translations = {
         "lgbm_text4": "1. Construye múltiples árboles de decisión paso a paso.",
         "lgbm_text5": "2. Cada nuevo árbol corrige los errores de los árboles anteriores.",
         "lgbm_text6": "3. Continúa mejorando hasta obtener las mejores predicciones posibles.",
+        "lgbm_text7":"4. Con el modelo entrenado, resultado de este proceso, todos los datos nuevos pasarán por estos árboles de decisión para llegar a la clasificación final.",
         "decision_tree_text1":"Un árbol de decisión para la clasificación funciona como un diagrama de flujo que ayuda a decidir la clase de una entrada paso a paso.",
         "decision_tree_text2a":"Comenzar en el nodo raíz",
-        "decision_tree_text2b":"El árbol comienza con una pregunta basada en una característica (p. ej., '¿El nivel educativo (DMDEDUC2) es <= 3.5 (número aplicado a una categoría en esta característica)?').",
+        "decision_tree_text2b":"El árbol comienza con una pregunta basada en una característica (p. ej., '¿El nivel educativo (DMDEDUC2) es menor o igual a 3.5 (número aplicado a una categoría en esta característica)?').",
         "decision_tree_text3a":"Divide",
         "decision_tree_text3b":"Los datos se dividen según la respuesta (p. ej., 'Verdad' o 'Falso').",
         "decision_tree_text4a":"Repite el proceso",
@@ -276,9 +278,10 @@ translations = {
         "lgbm_text4": "1. Ele constrói várias árvores de decisão passo a passo.",
         "lgbm_text5": "2. Cada nova árvore corrige erros cometidos pelas árvores anteriores.",
         "lgbm_text6": "3. Ele continua melhorando até fazer as melhores previsões possíveis.",
-        "decision_tree_text1":"Uma árvore de decisão para classificação funciona como um fluxograma que ajuda a decidir a classe de um novo conunto de dados passo a passo.",
+        "lgbm_text7":"4. Com o modelo treinado, resultado desse processo, todo novo dado passará por essas árvores de decisão para chegar na classificação final",
+        "decision_tree_text1":"Uma árvore de decisão para classificação funciona como um fluxograma que ajuda a decidir a classe de um novo conjunto de dados passo a passo.",
         "decision_tree_text2a":"Comece no nó raiz",
-        "decision_tree_text2b":"A árvore começa com uma pergunta baseada em uma característica (por exemplo, 'O nível de educação (DMDEDUC2) é <= 3,5 (número aplicado a uma categoria desta variável)?'",
+        "decision_tree_text2b":"A árvore começa com uma pergunta baseada em uma característica (por exemplo, 'O nível de educação (DMDEDUC2) é menor ou igual a 3,5 (número que representa uma categoria desta variável)?'",
         "decision_tree_text3a":"Faça uma divisão",
         "decision_tree_text3b":"Os dados são divididos com base na resposta (por exemplo, 'Verdadeiro' ou 'Falso').",
         "decision_tree_text4a":"Repita o processo",
@@ -621,7 +624,9 @@ with col16:
 
     st.info(translations[language]['lgbm_text6'])
 
-st.write("### " + translations[language]['explanation_title_1'])
+    st.info(translations[language]['lgbm_text7'])
+
+st.write("## " + translations[language]['explanation_title_1'])
 
 st.write(translations[language]['explanation_intro'])
 

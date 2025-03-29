@@ -225,7 +225,7 @@ translations = {
         'how_works':'Como funciona:',
         'works_1':'O gráfico mostra como o resultado previsto muda conforme a característica de interesse varia.',
         'works_2':'Ajuda a responder: "Se mudarmos essa característica, como isso impacta a decisão do modelo?"',
-        'works_3':'O eixo y representa o valor previsto do modelo, enquanto o eixo x representa valores diferentes da característica que está sendo analisado.',
+        'works_3':'O eixo y (vertical) representa o valor previsto do modelo, enquanto o eixo x (horizontal) representa valores diferentes da característica que está sendo analisado.',
         'why_useful':'Porque é Útil: ',
         'useful_1':'Interpretabilidade: Ajuda a entender se uma característica tem uma relação positiva, negativa ou não linear com a variável-alvo (depressão/não-depressão).',
         'useful_2':'Justiça e confiança: Garante que o comportamento do modelo esteja alinhado com o conhecimento do domínio.',

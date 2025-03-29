@@ -32,7 +32,7 @@ flag_path = {
 
 #Initialize session state for language if it's not already set
 if "language" not in st.session_state:
-        st.session_state["language"] = "English"  # Default language
+        st.session_state["language"] = "Português Br"  # Default language
 
 col1, col2 = st.sidebar.columns([1,4])
 with col1:
