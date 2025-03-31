@@ -189,7 +189,7 @@ st.write(f"{translations[language]['text_2']}")
 
 # Mapping links for different languages
 link_map = {
-    "English": "https://forms.gle/bHW9qQ8HYb9ceU9i9",
+    "English": "https://forms.gle/VoUGQhBocKGgwm1d8",
     "Español": "https://forms.gle/JLWNbM9dyyv5Npir7",
     "Português Br": "https://forms.gle/JLWNbM9dyyv5Npir7"
 }
