@@ -185,7 +185,7 @@ st.write(f"### {translations[language]['text_1']}")
 st.write(f"{translations[language]['text_2']}")
 
 #st.markdown(f"<h2>{translations[language]['title_2']}</h2>", unsafe_allow_html=True)
-link = "https://forms.gle/JLWNbM9dyyv5Npir7"
+#link = "https://forms.gle/JLWNbM9dyyv5Npir7"
 
 # Mapping links for different languages
 link_map = {
