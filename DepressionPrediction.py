@@ -289,7 +289,7 @@ translations = {
 language = st.session_state.get("language", "English")  # Default to English if not set
 
 ### LOAD ML MODELS ###
-with open("best_model.pkl", "rb") as f: # Load trained model
+with open("LGBM.pkl", "rb") as f: # Load trained model
     app_model = pickle.load(f)
 
 ### LOAD SCALER ###

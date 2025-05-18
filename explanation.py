@@ -238,7 +238,7 @@ metrics_df = pd.read_pickle("model_metrics.pkl")
 
 feature_importance_df = pd.read_pickle("feature_importance.pkl")
 
-with open("best_model.pkl", "rb") as f: # Load trained model
+with open("LGBM.pkl", "rb") as f: # Load trained model
     app_model = pickle.load(f)
 
 ### LOAD TRAINSET SHAP VALUES ###

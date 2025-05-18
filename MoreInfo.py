@@ -1,6 +1,4 @@
 import streamlit as st
-
-import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
 import pickle
@@ -82,16 +80,16 @@ translations = {
         'link_2':'National Health and Nutrition Examination Survey (NHANES 21-23)',
         'training_time':'Training Time',
         'prediction_time':"",
-        'accuracy':'',
-        'precision':'',
-        'recall':'',
-        'f1':'',
-        'test_accuracy':'Accuracy',
-        'test_precision': 'Precision',
-        'test_recall': 'Recall',
-        'test_f1': 'F1 Score',
-        'test_AUC': 'AUC**',
-        'average_AUC_CV':'',
+        'accuracy':'Train Accuracy',
+        'precision':'Train Precision',
+        'recall':'Train Recall',
+        'f1':'Train F1 Score',
+        'test_accuracy':'Test Accuracy',
+        'test_precision': 'Test Precision',
+        'test_recall': 'Test Recall',
+        'test_f1': 'Test F1 Score',
+        'test_AUC': 'Test AUC**',
+        'average_AUC_CV':'Train AUC**',
         'auc':'AUC',
         'auc_table_explain': 'Varies by calculation method',
         'LGBM_metrics':'LGBM Model Performance Metrics',
@@ -198,16 +196,16 @@ translations = {
         'link_2':'National Health and Nutrition Examination Survey (NHANES 21-23)',
         'training_time':'Training Time',
         'prediction_time':"",
-        'accuracy':'',
-        'precision':'',
-        'recall':'',
-        'f1':'',
-        'test_accuracy':'Acurácia',
-        'test_precision': 'Precisión',
-        'test_recall': 'Recall',
-        'test_f1': 'F1 Score',
-        'test_AUC': 'AUC**',
-        'average_AUC_CV':'',
+        'accuracy':'Acurácia del entrenamiento',
+        'precision':'Precisión del entrenamiento',
+        'recall':'Recall del entrenamiento',
+        'f1':'F1 Score del entrenamiento',
+        'test_accuracy':'Acurácia de la prueba',
+        'test_precision': 'Precisión de la prueba',
+        'test_recall': 'Recall de la prueba',
+        'test_f1': 'F1 Score de la prueba',
+        'test_AUC': 'AUC** de la prueba',
+        'average_AUC_CV':'AUC** del entrenamiento',
         'auc':'AUC',
         'auc_table_explain': 'Varies by calculation method',
         'LGBM_metrics':'Métricas de Performance do Modelo LGBM',
@@ -317,12 +315,12 @@ translations = {
         'precision':'Precisão (Treino)',
         'recall':'Recall (Treino)',
         'f1':'Escore F1 (Treino)',
-        'test_accuracy':'Acurácia',
-        'test_precision': 'Precisão',
-        'test_recall': 'Recall',
-        'test_f1': 'F1 Score',
-        'test_AUC': 'AUC**',
-        'auc':'AUC - Área sob a Curva',
+        'test_accuracy':'Acurácia (Teste)',
+        'test_precision': 'Precisão (Teste)',
+        'test_recall': 'Recall (Teste)',
+        'test_f1': 'F1 Score (Teste)',
+        'test_AUC': 'AUC** (Teste)',
+        'auc':'AUC - Área sob a Curva (Teste)',
         'average_AUC_CV':'AUC (Treino)',
         'auc_table_explain': 'Varia de acordo com método de cálculo',
         'accuracy_help':'',
@@ -386,7 +384,7 @@ metrics_df = pd.read_pickle("model_metrics.pkl")
 
 feature_importance_df = pd.read_pickle("feature_importance.pkl")
 
-with open("best_model.pkl", "rb") as f: # Load trained model
+with open("LGBM.pkl", "rb") as f: # Load trained model
     app_model = pickle.load(f)
 
 with open('DT_model.pkl', 'rb') as f:
@@ -405,7 +403,7 @@ def plot_model_results(df, language):
 
     # Define the metrics to plot
     #timing_cols = ['training_time', 'prediction_time']
-    test_metrics_cols = ['test_accuracy','test_precision', 'test_recall', 'test_f1', 'test_AUC']
+    test_metrics_cols = ['accuracy','precision', 'recall', 'f1','average_AUC_CV', 'test_accuracy','test_precision', 'test_recall', 'test_f1', 'test_AUC']
 
     df_plot = df[test_metrics_cols].copy()
 
@@ -610,7 +608,9 @@ with col13:
 with col14:
     st.info(translations[language]['decision_tree_text5b'])
 
-plot_custom_decision_tree(dt_model, language=language, translations=translations)
+#plot_custom_decision_tree(dt_model, language=language, translations=translations)
+st.image("dt_model.png", width=750)
+
 
 st.write("#### " + translations[language]['lgbm_text3'])
 
